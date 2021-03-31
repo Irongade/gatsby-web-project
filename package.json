@@ -14,9 +14,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "framer-motion": "^4.0.3",
     "gatsby": "^3.1.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "prettier": "2.2.1"
