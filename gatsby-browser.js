@@ -1,7 +1,7 @@
-const React = require("react")
+import React from "react";
 import {GlobalProvider} from "./src/context/globalContext"
 
-exports.wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   return (
       <GlobalProvider>
         {element}
