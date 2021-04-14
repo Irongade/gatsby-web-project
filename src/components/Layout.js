@@ -11,6 +11,7 @@ import {useGlobalStateContext, useGlobalDispatchContext } from "../context/globa
 // components
 import Header from "./Header";
 import CustomCursor from "./customCursor";
+import Navigation from "../components/Navigation"
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -66,11 +67,15 @@ const Layout = ({ children }) => {
     dispatch({type: "CURSOR_TYPE", cursorType: cursorType})
   }
 
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <CustomCursor />
-      <Header onCursorHover={onCursorHover} />
+      <CustomCursor toggleMenu={toggleMenu} />
+      <Header onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu}  />
+      <Navigation onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu}  />
       <main>{children}</main>
    </ThemeProvider>
   )

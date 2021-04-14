@@ -6,7 +6,7 @@ import {Container, Flex} from "../styles/globalStyles"
 
 import {useGlobalStateContext, useGlobalDispatchContext} from "../context/globalContext"
 
-const Header = ({onCursorHover}) => {
+const Header = ({onCursorHover, toggleMenu, setToggleMenu}) => {
     const dispatch = useGlobalDispatchContext();
     const {currentTheme} = useGlobalStateContext();
 
@@ -42,7 +42,7 @@ const Header = ({onCursorHover}) => {
                         <Link to="/">W</Link>
                     </Logo>
 
-                    <Menu>
+                    <Menu onClick={() => setToggleMenu(!toggleMenu)}>
                         <button>
                             <span></span>
                             <span></span>
