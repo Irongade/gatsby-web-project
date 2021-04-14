@@ -3,9 +3,11 @@ import Layout from "../components/Layout";
 
 // contexts
 import {useGlobalStateContext, useGlobalDispatchContext} from "../context/globalContext"
-//components
 
+//components
 import HomeBanner from "../components/homepage/HomeBanner"
+import HomeContent from "../components/homepage/HomeContent"
+import HomeFeature from "../components/homepage/HomeFeature"
 
 export default function Home() {
 
@@ -20,5 +22,7 @@ export default function Home() {
 
   return <Layout>
     <HomeBanner onCursorHover={onCursorHover} />
+    <HomeContent />
+    <HomeFeature onCursorHover={onCursorHover} />
   </Layout>
 }
