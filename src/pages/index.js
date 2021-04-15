@@ -8,6 +8,7 @@ import {useGlobalStateContext, useGlobalDispatchContext} from "../context/global
 import HomeBanner from "../components/homepage/HomeBanner"
 import HomeContent from "../components/homepage/HomeContent"
 import HomeFeature from "../components/homepage/HomeFeature"
+import HomeAbout from "../components/homepage/HomeAbout"
 
 export default function Home() {
 
@@ -24,5 +25,6 @@ export default function Home() {
     <HomeBanner onCursorHover={onCursorHover} />
     <HomeContent />
     <HomeFeature onCursorHover={onCursorHover} />
+    <HomeAbout onCursorHover={onCursorHover} />
   </Layout>
 }

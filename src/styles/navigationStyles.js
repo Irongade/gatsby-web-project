@@ -67,7 +67,7 @@ export const NavList = styled.div`
                 display: flex;
                 align-items: center;
                 .arrow {
-                    height: 65px;
+                    height: 40px;
                     margin-right: 8px;
                     svg {
                         width: 60px;

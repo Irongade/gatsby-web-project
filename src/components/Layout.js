@@ -68,13 +68,17 @@ const Layout = ({ children }) => {
   }
 
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [hamburgerPosition, setHamburgerPosition ] = useState({
+    x: 0,
+    y: 0
+  })
 
 
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
       <CustomCursor toggleMenu={toggleMenu} />
-      <Header onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu}  />
+      <Header onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} hamburgerPosition={hamburgerPosition} setHamburgerPosition={setHamburgerPosition} />
       <Navigation onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu}  />
       <main>{children}</main>
    </ThemeProvider>

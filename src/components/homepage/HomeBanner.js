@@ -68,8 +68,6 @@ const HomeBanner = ({onCursorHover}) => {
                 lastX = currentX;
                 lastY = currentY;
                 renderingCtx.drawImage(drawingElement, 0, 0)
-
-
             }
         })
     }, [currentTheme])
