@@ -174,7 +174,6 @@ export const FeaturedProject = styled.div`
 // About section
 
 export const HomeAboutSection = styled(motion.div)`
-    margin-bottom: 200px;
 `
 
 export const About = styled.div`

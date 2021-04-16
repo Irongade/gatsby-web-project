@@ -13,7 +13,11 @@ import MakeItZeroVideo from "../assets/video/make-it-zero.mp4"
 import ItTakesAnIslandVideo from "../assets/video/it-takes-an-island.mp4"
 import BeachesVideo from "../assets/video/50-beaches.mp4"
 
+//icons
+import {Instagram, Facebook, Vimeo } from "../assets/svg/social-icons"
 
+// components 
+import { FooterContent, FooterSocial} from "../styles/footerStyles"
 
 const navRoutes = [
     {
@@ -107,7 +111,27 @@ const Navigation = ({toggleMenu, setToggleMenu, onCursorHover}) => {
                         </NavList>
 
                         <NavFooter>
+                            <Flex spaceBetween>
+                                <FooterContent>
+                                    <p>adeoluayangade@yahoo.com</p>
+                                </FooterContent>
+                                <FooterContent wider>
+                                    <p>0706.789.4583</p>
+                                </FooterContent>
+                                <FooterSocial>
+                                    <a href="/" onMouseEnter={() => onCursorHover("pointer")} onMouseLeave={onCursorHover} >
+                                        <Instagram />
+                                    </a>
 
+                                    <a href="/" onMouseEnter={() => onCursorHover("pointer")} onMouseLeave={onCursorHover}>
+                                        <Facebook />
+                                    </a>
+
+                                    <a href="/" onMouseEnter={() => onCursorHover("pointer")} onMouseLeave={onCursorHover}>
+                                        <Vimeo />
+                                    </a>
+                                </FooterSocial>
+                            </Flex>
                         </NavFooter>
 
                         <NavVideos>

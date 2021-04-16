@@ -10,7 +10,7 @@ import {useGlobalStateContext, useGlobalDispatchContext} from "../context/global
 // hooks
 import useElementPosition from "../hooks/useElementPosition"
 
-const Header = ({onCursorHover, toggleMenu, setToggleMenu}) => {
+const Header = ({onCursorHover, toggleMenu, setToggleMenu, hamburgerPosition,setHamburgerPosition}) => {
     const hamburger = useRef(null);
 
     const dispatch = useGlobalDispatchContext();
@@ -31,6 +31,14 @@ const Header = ({onCursorHover, toggleMenu, setToggleMenu}) => {
         }
     }
 
+    const menuHover = () => {
+        onCursorHover("locked")
+        setHamburgerPosition({
+            x: position.x,
+            y: position.y + 72
+        })
+    }
+
     useEffect(() => {
         window.localStorage.setItem("theme", currentTheme)
     }, [currentTheme])
@@ -49,7 +57,7 @@ const Header = ({onCursorHover, toggleMenu, setToggleMenu}) => {
                         <Link to="/">W</Link>
                     </Logo>
 
-                    <Menu ref={hamburger} onClick={() => setToggleMenu(!toggleMenu)}>
+                    <Menu ref={hamburger} onMouseEnter={menuHover} onMouseLeave={onCursorHover} onClick={() => setToggleMenu(!toggleMenu)}>
                         <button>
                             <span></span>
                             <span></span>

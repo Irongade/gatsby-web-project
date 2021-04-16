@@ -82,6 +82,21 @@ export const NavList = styled.div`
 `
 
 export const NavFooter = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+
+    p {
+        color: ${props => props.theme.background}
+    }
+
+    svg {
+        path {
+            fill: ${props => props.theme.background}
+        }
+    }
 
 `
 

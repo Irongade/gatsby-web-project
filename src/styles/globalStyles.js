@@ -57,9 +57,9 @@ export const Flex = styled.div`
 `
 
 export const Cursor = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 400px;
+    left: 400px;
     width: 32px;
     height: 32px;
     background: ${props => props.theme.red};
@@ -80,6 +80,15 @@ export const Cursor = styled.div`
         width: 56px;
         height: 56px;
         border: 4px solid ${props => props.theme.red};
+    }
+
+    &.locked {
+        background: transparent !important;
+        width: 56px;
+        height: 56px;
+        border: 4px solid ${props => props.theme.red};
+        top: ${props => props.theme.top} !important;
+        left: ${props => props.theme.left} !important;
     }
 
     &.nav-open {

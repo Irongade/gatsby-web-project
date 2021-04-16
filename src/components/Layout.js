@@ -12,6 +12,7 @@ import {useGlobalStateContext, useGlobalDispatchContext } from "../context/globa
 import Header from "./Header";
 import CustomCursor from "./customCursor";
 import Navigation from "../components/Navigation"
+import Footer from "../components/Footer"
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -31,6 +32,14 @@ const GlobalStyle = createGlobalStyle`
     background: ${props => props.theme.background};
     overscroll-behavior: none;
     overflow-x: hidden;
+
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
   }
 `
 
@@ -46,16 +55,35 @@ const Layout = ({ children }) => {
     }
   `)
 
+
+  const [hamburgerPosition, setHamburgerPosition ] = useState({
+    x: 0,
+    y: 0
+  })
+
+  // const [iconPosition, setIconPosition ] = useState({
+  //   x: 0,
+  //   y: 0
+  // })
+
   const darkTheme = {
     background: "#000",
     text: "#fff",
-    red: "#ea291e"
+    red: "#ea291e",
+    left: `${hamburgerPosition.x}px`,
+    top: `${hamburgerPosition.y}px`,
+    // iconLeft: `${iconPosition.x}px`,
+    // iconTop: `${iconPosition.y}px`,
   }
 
   const lightTheme = {
     background: "#fff",
     text: "#000",
-    red: "#ea291e"
+    red: "#ea291e",
+    left: `${hamburgerPosition.x}px`,
+    top: `${hamburgerPosition.y}px`,
+    // iconLeft: `${iconPosition.x}px`,
+    // iconTop: `${iconPosition.y}px`,
   }
 
   const {currentTheme, cursorStyles } = useGlobalStateContext()
@@ -68,11 +96,6 @@ const Layout = ({ children }) => {
   }
 
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [hamburgerPosition, setHamburgerPosition ] = useState({
-    x: 0,
-    y: 0
-  })
-
 
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
@@ -81,6 +104,7 @@ const Layout = ({ children }) => {
       <Header onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} hamburgerPosition={hamburgerPosition} setHamburgerPosition={setHamburgerPosition} />
       <Navigation onCursorHover={onCursorHover} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu}  />
       <main>{children}</main>
+      <Footer onCursorHover={onCursorHover} hamburgerPosition={hamburgerPosition} setHamburgerPosition={setHamburgerPosition} />
    </ThemeProvider>
   )
 }
