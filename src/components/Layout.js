@@ -25,13 +25,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
-  }
-
-  body {
-    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: ${props => props.theme.background};
-    overscroll-behavior: none;
-    overflow-x: hidden;
 
     -ms-overflow-style: none; 
     scrollbar-width: none;
@@ -39,7 +32,13 @@ const GlobalStyle = createGlobalStyle`
     &::-webkit-scrollbar {
       display: none;
     }
+  }
 
+  body {
+    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: ${props => props.theme.background};
+    overscroll-behavior: none;
+    overflow-x: hidden;
   }
 `
 
